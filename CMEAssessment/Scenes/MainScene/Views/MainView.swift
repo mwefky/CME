@@ -10,13 +10,15 @@ import SwiftUI
 struct MainView: View {
     @ObservedObject var viewModel: MainViewModel
     @ObservedObject var coordinator: AppCoordinator
-    
+    @State private var showAlert = false
+    @State private var countryToDelete: Country?
+
     var body: some View {
         NavigationView {
             ZStack {
                 LinearGradient(gradient: Gradient(colors: [.blue.opacity(0.3), .white]), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all)
-                
+
                 VStack {
                     SearchBar(
                         text: $viewModel.searchQuery,
@@ -28,7 +30,7 @@ struct MainView: View {
                             }
                         }
                     }
-                    
+
                     if viewModel.isLoading {
                         ProgressView("Loading countries...")
                             .padding()
@@ -38,20 +40,24 @@ struct MainView: View {
                         Text(errorMessage)
                             .foregroundColor(.red)
                     } else {
-                        ScrollView {
-                            VStack(spacing: 10) {
-                                ForEach(viewModel.addedCountries, id: \.name) { country in
-                                    CountryCardView(country: country)
-                                        .transition(.move(edge: .trailing))
-                                        .onTapGesture {
-                                            withAnimation {
-                                                viewModel.removeCountry(country)
-                                            }
-                                        }
-                                }
+                        List {
+                            ForEach(viewModel.addedCountries.reversed(), id: \.name) { country in
+                                CountryCardView(country: country)
+                                    .listRowBackground(Color.clear) // Set the background of each row
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .fill(Color.white.opacity(0.8))
+                                            .shadow(radius: 5)
+                                    )
+                                    .padding(.vertical, 4)
+                                    .onTapGesture {
+                                        coordinator.selectedCountry = country
+                                    }
                             }
+                            .onDelete(perform: deleteCountry)
                         }
-                        .padding()
+                        .listStyle(PlainListStyle())
+                        .background(Color.clear)
                     }
                 }
             }
@@ -59,6 +65,14 @@ struct MainView: View {
                 viewModel.loadCountries()
             }
             .navigationTitle("Countries")
+        }
+    }
+
+    private func deleteCountry(at offsets: IndexSet) {
+        for index in offsets {
+            let reversedIndex = viewModel.addedCountries.count - 1 - index
+            let country = viewModel.addedCountries[reversedIndex]
+            viewModel.removeCountry(country)
         }
     }
 }

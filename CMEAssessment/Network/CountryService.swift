@@ -15,10 +15,7 @@ class CountryService {
         }
 
         let (data, _) = try await URLSession.shared.data(from: url)
-
         let countryDTOs = try JSONDecoder().decode([CountryDTO].self, from: data)
         return countryDTOs.map(CountryMapper.map)
     }
 }
-
-

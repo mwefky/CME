@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct DetailView: View {
-    let country: Country
+    let country: Country?
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("Capital: \(country.flagURL)")
+            Text("Capital: \(country?.flagURL)")
                 .font(.headline)
 //            if let currency = country.currencies?.first {
 //                Text("Currency: \(currency.name) (\(currency.code))")
 //            }
         }
         .padding()
-        .navigationTitle(country.name)
+        .navigationTitle(country?.name ?? "")
     }
 }

@@ -17,15 +17,13 @@ struct CountryCardView: View {
                     .font(.headline)
                 Spacer()
             }
-            Text("Capital: \(country.region)")
+            Text("Capital: \(country.capital)")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
             
-//            if let currency = country.flagURL {
-                Text("Currency: \(country.flagURL) (\(country.flagURL))")
+                Text("Currency: \(country.currency)")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-//            }
         }
         .padding()
         .background(LinearGradient(gradient: Gradient(colors: [.blue.opacity(0.2), .white]), startPoint: .top, endPoint: .bottom))

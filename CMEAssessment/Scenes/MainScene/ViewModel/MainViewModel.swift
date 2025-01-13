@@ -10,13 +10,23 @@ import Foundation
 class MainViewModel: ObservableObject {
     @Published var countries: [Country] = []
     @Published var searchQuery: String = ""
-    @Published var addedCountries: [Country] = []
     @Published var countryNames: [String] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String?
 
-    private let countryService = CountryService()
-    
+    @Published var addedCountries: [Country] = [] 
+
+    private let countryService: CountryService
+    private let countryManager: CountryManager
+
+    init(
+        countryService: CountryService = CountryService(),
+        countryManager: CountryManager = CountryManager()
+    ) {
+        self.countryService = countryService
+        self.countryManager = countryManager
+    }
+
     func loadCountries() {
         isLoading = true
         Task {
@@ -35,15 +45,14 @@ class MainViewModel: ObservableObject {
             }
         }
     }
-    
+
     func addCountry(_ country: Country) {
-        guard addedCountries.count < 5 else { return }
-        if !addedCountries.contains(where: { $0.name == country.name }) {
-            addedCountries.append(country)
-        }
+        countryManager.addCountry(country)
+        addedCountries = countryManager.addedCountries
     }
-    
+
     func removeCountry(_ country: Country) {
-        addedCountries.removeAll { $0.name == country.name }
+        countryManager.removeCountry(country)
+        addedCountries = countryManager.addedCountries
     }
 }

@@ -6,13 +6,16 @@
 //
 
 import Foundation
+
 struct CountryMapper {
     static func map(dto: CountryDTO) -> Country {
         return Country(
             name: dto.name,
             population: dto.population,
             region: dto.region,
-            flagURL: dto.flagURL
+            capital: dto.capital ?? "Unknown Capital",
+            currency: dto.currencies?.first?.name ?? "Unknown Currency",
+            flagURL: dto.flags.png ?? ""
         )
     }
 }
