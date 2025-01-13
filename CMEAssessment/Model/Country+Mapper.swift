@@ -11,8 +11,6 @@ struct CountryMapper {
     static func map(dto: CountryDTO) -> Country {
         return Country(
             name: dto.name,
-            population: dto.population,
-            region: dto.region,
             capital: dto.capital ?? "Unknown Capital",
             currency: dto.currencies?.first?.name ?? "Unknown Currency",
             flagURL: dto.flags.png ?? ""
