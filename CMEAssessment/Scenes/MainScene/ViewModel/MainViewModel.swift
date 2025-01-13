@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import Combine
+import Foundation
+import Combine
 
 class MainViewModel: ObservableObject {
     @Published var countries: [Country] = []
@@ -13,19 +16,39 @@ class MainViewModel: ObservableObject {
     @Published var countryNames: [String] = []
     @Published var isLoading: Bool = false
     @Published var errorMessage: String?
-
-    @Published var addedCountries: [Country] = [] 
+    @Published var addedCountries: [Country] = []
+    @Published var isPermissionDenied: Bool = false
 
     private let countryService: CountryService
     private let countryManager: CountryManager
+    private let locationManager: LocationManager
+    private let defaultCountryHandler: DefaultCountryHandlerProtocol
+    private var cancellables = Set<AnyCancellable>()
 
     init(
         countryService: CountryService = CountryService(),
-        countryManager: CountryManager = CountryManager()
+        countryManager: CountryManager = CountryManager(),
+        locationManager: LocationManager = LocationManager(),
+        defaultCountryHandler: DefaultCountryHandlerProtocol = DefaultCountryHandler()
     ) {
         self.countryService = countryService
         self.countryManager = countryManager
+        self.locationManager = locationManager
+        self.defaultCountryHandler = defaultCountryHandler
+
         self.addedCountries = countryManager.addedCountries
+
+        locationManager.$currentCountry
+            .sink { [weak self] countryName in
+                guard let self = self, let countryName = countryName else { return }
+                if let country = self.countries.first(where: { $0.name == countryName }) {
+                    self.addCountry(country)
+                }
+            }
+            .store(in: &cancellables)
+
+        locationManager.$isPermissionDenied
+            .assign(to: &$isPermissionDenied)
     }
 
     func loadCountries() {
@@ -36,6 +59,7 @@ class MainViewModel: ObservableObject {
                 DispatchQueue.main.async { [weak self] in
                     self?.countries = fetchedCountries
                     self?.countryNames = fetchedCountries.map { $0.name }
+                    self?.addDefaultCountryIfNeeded()
                     self?.isLoading = false
                 }
             } catch {
@@ -47,11 +71,18 @@ class MainViewModel: ObservableObject {
         }
     }
 
-    func addCountry(_ country: Country) {
-        if addedCountries.contains(where: { $0.name == country.name }) {
-            return
+    private func addDefaultCountryIfNeeded() {
+        guard addedCountries.isEmpty else { return }
+        if let defaultCountry = defaultCountryHandler.determineDefaultCountry(
+            availableCountries: countries,
+            locationCountry: locationManager.currentCountry
+        ) {
+            addCountry(defaultCountry)
         }
+    }
 
+    func addCountry(_ country: Country) {
+        guard !addedCountries.contains(where: { $0.name == country.name }) else { return }
         countryManager.addCountry(country)
         addedCountries = countryManager.addedCountries
     }

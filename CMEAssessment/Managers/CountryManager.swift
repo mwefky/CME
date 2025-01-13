@@ -16,6 +16,10 @@ class CountryManager {
     }
 
     func addCountry(_ country: Country) {
+        if addedCountries.contains(where: { $0.name == country.name }) {
+            return // Prevent duplicates
+        }
+
         if addedCountries.count >= 5 {
             addedCountries.removeFirst()
         }
