@@ -71,7 +71,7 @@ class MainViewModel: ObservableObject {
         }
     }
 
-    private func addDefaultCountryIfNeeded() {
+    func addDefaultCountryIfNeeded() {
         guard addedCountries.isEmpty else { return }
         if let defaultCountry = defaultCountryHandler.determineDefaultCountry(
             availableCountries: countries,

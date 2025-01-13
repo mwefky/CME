@@ -32,6 +32,17 @@
 		CF4AF9C12D355351009E7F38 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9C02D355351009E7F38 /* PersistenceManager.swift */; };
 		CF4AF9C32D355CDD009E7F38 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9C22D355CDD009E7F38 /* LocationManager.swift */; };
 		CF4AF9C52D356706009E7F38 /* DefaultCountryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9C42D356706009E7F38 /* DefaultCountryHandler.swift */; };
+		CF4AF9C72D356FD3009E7F38 /* MainViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9C62D356FD3009E7F38 /* MainViewModelTests.swift */; };
+		CF4AF9CA2D356FFF009E7F38 /* MockCountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9C92D356FFF009E7F38 /* MockCountryService.swift */; };
+		CF4AF9CC2D357018009E7F38 /* MockCountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9CB2D357018009E7F38 /* MockCountryManager.swift */; };
+		CF4AF9CE2D357034009E7F38 /* MockLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9CD2D357034009E7F38 /* MockLocationManager.swift */; };
+		CF4AF9D02D35704B009E7F38 /* MockDefaultCountryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9CF2D35704B009E7F38 /* MockDefaultCountryHandler.swift */; };
+		CF4AF9D22D3577E6009E7F38 /* CountryManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9D12D3577E6009E7F38 /* CountryManagerTests.swift */; };
+		CF4AF9D42D3578F4009E7F38 /* DefaultCountryHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9D32D3578F4009E7F38 /* DefaultCountryHandlerTests.swift */; };
+		CF4AF9D62D357931009E7F38 /* LocationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9D52D357931009E7F38 /* LocationManagerTests.swift */; };
+		CF4AF9D82D357962009E7F38 /* PersistenceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9D72D357962009E7F38 /* PersistenceManagerTests.swift */; };
+		CF4AF9DA2D357BDD009E7F38 /* MainViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9D92D357BDD009E7F38 /* MainViewUITests.swift */; };
+		CF4AF9DC2D357F88009E7F38 /* DetailViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9DB2D357F88009E7F38 /* DetailViewUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +91,17 @@
 		CF4AF9C02D355351009E7F38 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		CF4AF9C22D355CDD009E7F38 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		CF4AF9C42D356706009E7F38 /* DefaultCountryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCountryHandler.swift; sourceTree = "<group>"; };
+		CF4AF9C62D356FD3009E7F38 /* MainViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModelTests.swift; sourceTree = "<group>"; };
+		CF4AF9C92D356FFF009E7F38 /* MockCountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCountryService.swift; sourceTree = "<group>"; };
+		CF4AF9CB2D357018009E7F38 /* MockCountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCountryManager.swift; sourceTree = "<group>"; };
+		CF4AF9CD2D357034009E7F38 /* MockLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationManager.swift; sourceTree = "<group>"; };
+		CF4AF9CF2D35704B009E7F38 /* MockDefaultCountryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDefaultCountryHandler.swift; sourceTree = "<group>"; };
+		CF4AF9D12D3577E6009E7F38 /* CountryManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManagerTests.swift; sourceTree = "<group>"; };
+		CF4AF9D32D3578F4009E7F38 /* DefaultCountryHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCountryHandlerTests.swift; sourceTree = "<group>"; };
+		CF4AF9D52D357931009E7F38 /* LocationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerTests.swift; sourceTree = "<group>"; };
+		CF4AF9D72D357962009E7F38 /* PersistenceManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManagerTests.swift; sourceTree = "<group>"; };
+		CF4AF9D92D357BDD009E7F38 /* MainViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewUITests.swift; sourceTree = "<group>"; };
+		CF4AF9DB2D357F88009E7F38 /* DetailViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +178,13 @@
 		CF4AF9792D3495EF009E7F38 /* CMEAssessmentTests */ = {
 			isa = PBXGroup;
 			children = (
+				CF4AF9C82D356FF5009E7F38 /* Mocks */,
 				CF4AF97A2D3495EF009E7F38 /* CMEAssessmentTests.swift */,
+				CF4AF9C62D356FD3009E7F38 /* MainViewModelTests.swift */,
+				CF4AF9D12D3577E6009E7F38 /* CountryManagerTests.swift */,
+				CF4AF9D32D3578F4009E7F38 /* DefaultCountryHandlerTests.swift */,
+				CF4AF9D52D357931009E7F38 /* LocationManagerTests.swift */,
+				CF4AF9D72D357962009E7F38 /* PersistenceManagerTests.swift */,
 			);
 			path = CMEAssessmentTests;
 			sourceTree = "<group>";
@@ -166,6 +194,8 @@
 			children = (
 				CF4AF9842D3495EF009E7F38 /* CMEAssessmentUITests.swift */,
 				CF4AF9862D3495EF009E7F38 /* CMEAssessmentUITestsLaunchTests.swift */,
+				CF4AF9D92D357BDD009E7F38 /* MainViewUITests.swift */,
+				CF4AF9DB2D357F88009E7F38 /* DetailViewUITests.swift */,
 			);
 			path = CMEAssessmentUITests;
 			sourceTree = "<group>";
@@ -291,6 +321,17 @@
 				CF4AF9A52D3497D6009E7F38 /* DetailView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CF4AF9C82D356FF5009E7F38 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CF4AF9C92D356FFF009E7F38 /* MockCountryService.swift */,
+				CF4AF9CB2D357018009E7F38 /* MockCountryManager.swift */,
+				CF4AF9CD2D357034009E7F38 /* MockLocationManager.swift */,
+				CF4AF9CF2D35704B009E7F38 /* MockDefaultCountryHandler.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -450,7 +491,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF4AF9CE2D357034009E7F38 /* MockLocationManager.swift in Sources */,
+				CF4AF9CC2D357018009E7F38 /* MockCountryManager.swift in Sources */,
+				CF4AF9D42D3578F4009E7F38 /* DefaultCountryHandlerTests.swift in Sources */,
+				CF4AF9D62D357931009E7F38 /* LocationManagerTests.swift in Sources */,
 				CF4AF97B2D3495EF009E7F38 /* CMEAssessmentTests.swift in Sources */,
+				CF4AF9D22D3577E6009E7F38 /* CountryManagerTests.swift in Sources */,
+				CF4AF9CA2D356FFF009E7F38 /* MockCountryService.swift in Sources */,
+				CF4AF9C72D356FD3009E7F38 /* MainViewModelTests.swift in Sources */,
+				CF4AF9D02D35704B009E7F38 /* MockDefaultCountryHandler.swift in Sources */,
+				CF4AF9D82D357962009E7F38 /* PersistenceManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +509,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF4AF9872D3495EF009E7F38 /* CMEAssessmentUITestsLaunchTests.swift in Sources */,
+				CF4AF9DC2D357F88009E7F38 /* DetailViewUITests.swift in Sources */,
+				CF4AF9DA2D357BDD009E7F38 /* MainViewUITests.swift in Sources */,
 				CF4AF9852D3495EF009E7F38 /* CMEAssessmentUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
