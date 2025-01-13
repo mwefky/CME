@@ -29,6 +29,7 @@
 		CF4AF9B82D353A68009E7F38 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9B72D353A68009E7F38 /* View+Extension.swift */; };
 		CF4AF9BB2D35408D009E7F38 /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9BA2D35408D009E7F38 /* CountryManager.swift */; };
 		CF4AF9BE2D354918009E7F38 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9BD2D354918009E7F38 /* DetailViewModel.swift */; };
+		CF4AF9C12D355351009E7F38 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9C02D355351009E7F38 /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		CF4AF9B72D353A68009E7F38 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		CF4AF9BA2D35408D009E7F38 /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
 		CF4AF9BD2D354918009E7F38 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		CF4AF9C02D355351009E7F38 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				CF4AF9B52D353A3B009E7F38 /* Extensions */,
 				CF4AF9AA2D349A19009E7F38 /* Model */,
 				CF4AF9932D34961A009E7F38 /* Network */,
+				CF4AF9B92D35407A009E7F38 /* Managers */,
 				CF4AF9A72D349800009E7F38 /* Components */,
 				CF4AF9992D3496ED009E7F38 /* Coordinator */,
 				CF4AF99C2D349720009E7F38 /* Scenes */,
@@ -193,7 +196,6 @@
 		CF4AF99D2D34972C009E7F38 /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
-				CF4AF9B92D35407A009E7F38 /* Managers */,
 				CF4AF99E2D34974B009E7F38 /* ViewModel */,
 				CF4AF9A12D349772009E7F38 /* Views */,
 			);
@@ -264,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				CF4AF9BA2D35408D009E7F38 /* CountryManager.swift */,
+				CF4AF9C02D355351009E7F38 /* PersistenceManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				CF4AF96A2D3495EB009E7F38 /* CMEAssessmentApp.swift in Sources */,
 				CF4AF9B22D349AA3009E7F38 /* AppConstants.swift in Sources */,
 				CF4AF9AC2D349A23009E7F38 /* Country.swift in Sources */,
+				CF4AF9C12D355351009E7F38 /* PersistenceManager.swift in Sources */,
 				CF4AF9BB2D35408D009E7F38 /* CountryManager.swift in Sources */,
 				CF4AF9A02D34975C009E7F38 /* MainViewModel.swift in Sources */,
 			);

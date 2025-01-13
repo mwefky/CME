@@ -8,4 +8,6 @@
 import Foundation
 struct AppConstants {
     static let apiBaseURL = "https://restcountries.com/v2"
+    static let cacheForCountriesKey = "countriesCache"
+    static let savedCountriesKey = "savedCountries"
 }
