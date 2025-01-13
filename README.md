@@ -56,15 +56,18 @@ Navigating to the DetailView.
 Verifying UI elements in DetailView.
 Architecture
 This project follows the MVVM architecture with protocols and dependency injection for separation of concerns.
-
-Key Components:
+   ```
+## Key Components:
 
 MainViewModel: Handles country data fetching, offline storage, and location-based logic.
 CountryService: Fetches country data from the API.
 CountryManager: Manages the list of added countries with persistent storage.
 LocationManager: Handles location-based default country selection.
 DefaultCountryHandler: Encapsulates logic for determining the default country.
-Future Enhancements
+   ```
+   ```
+## Future Enhancements
+   ```
 Integrate Facebook SnapshotKit for UI Tests
 Use SnapshotKit to take screenshots during UI tests for visual regression testing.
 Ensure the UI remains consistent across different versions of the app.
@@ -79,3 +82,4 @@ Analytics
 Integrate analytics tools (e.g., Firebase) to track user behavior.
 Accessibility Improvements
 Ensure all UI elements support VoiceOver and dynamic text sizes.
+   ```
