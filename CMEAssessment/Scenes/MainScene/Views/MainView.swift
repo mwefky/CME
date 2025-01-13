@@ -12,13 +12,13 @@ struct MainView: View {
     @ObservedObject var coordinator: AppCoordinator
     @State private var showAlert = false
     @State private var countryToDelete: Country?
-
+    
     var body: some View {
         NavigationView {
             ZStack {
                 LinearGradient(gradient: Gradient(colors: [.blue.opacity(0.3), .white]), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.all)
-
+                
                 VStack {
                     SearchBar(
                         text: $viewModel.searchQuery,
@@ -30,7 +30,7 @@ struct MainView: View {
                             }
                         }
                     }
-
+                    
                     if viewModel.isLoading {
                         ProgressView("Loading countries...")
                             .padding()
@@ -51,7 +51,7 @@ struct MainView: View {
                                     )
                                     .padding(.vertical, 4)
                                     .onTapGesture {
-                                        coordinator.selectedCountry = country
+                                        coordinator.showDetail(for: country)
                                     }
                             }
                             .onDelete(perform: deleteCountry)
@@ -65,9 +65,14 @@ struct MainView: View {
                 viewModel.loadCountries()
             }
             .navigationTitle("Countries")
+            .sheet(isPresented: $coordinator.isDetailViewPresented) {
+                if let selectedCountry = coordinator.selectedCountry {
+                    DetailView(viewModel: DetailViewModel(country: selectedCountry))
+                }
+            }
         }
     }
-
+    
     private func deleteCountry(at offsets: IndexSet) {
         for index in offsets {
             let reversedIndex = viewModel.addedCountries.count - 1 - index

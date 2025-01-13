@@ -1,5 +1,5 @@
 //
-//  Coordinator.swift
+//  AppCoordinator.swift
 //  CMEAssessment
 //
 //  Created by Mina Wefky on 13/01/2025.
@@ -16,12 +16,14 @@ class AppCoordinator: ObservableObject, Coordinator {
     @Published var mainViewModel = MainViewModel()
     @Published var selectedCountry: Country?
     
+    @Published var isDetailViewPresented: Bool = false
+    
     func start() -> some View {
         MainView(viewModel: mainViewModel, coordinator: self)
     }
     
-    func showDetail(for country: Country) -> some View {
-        DetailView(country: country)
+    func showDetail(for country: Country) {
+        selectedCountry = country
+        isDetailViewPresented = true
     }
 }
-

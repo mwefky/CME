@@ -47,6 +47,11 @@ class MainViewModel: ObservableObject {
     }
 
     func addCountry(_ country: Country) {
+        
+        if addedCountries.contains(where: { $0.name == country.name }) {
+            return
+        }
+        
         countryManager.addCountry(country)
         addedCountries = countryManager.addedCountries
     }

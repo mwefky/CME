@@ -28,6 +28,7 @@
 		CF4AF9B42D349B73009E7F38 /* CountryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9B32D349B73009E7F38 /* CountryCardView.swift */; };
 		CF4AF9B82D353A68009E7F38 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9B72D353A68009E7F38 /* View+Extension.swift */; };
 		CF4AF9BB2D35408D009E7F38 /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9BA2D35408D009E7F38 /* CountryManager.swift */; };
+		CF4AF9BE2D354918009E7F38 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9BD2D354918009E7F38 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		CF4AF9B32D349B73009E7F38 /* CountryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCardView.swift; sourceTree = "<group>"; };
 		CF4AF9B72D353A68009E7F38 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		CF4AF9BA2D35408D009E7F38 /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
+		CF4AF9BD2D354918009E7F38 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,7 +219,8 @@
 		CF4AF9A42D3497C2009E7F38 /* DetailsScene */ = {
 			isa = PBXGroup;
 			children = (
-				CF4AF9A52D3497D6009E7F38 /* DetailView.swift */,
+				CF4AF9BC2D35490F009E7F38 /* ViewModel */,
+				CF4AF9BF2D35492E009E7F38 /* Views */,
 			);
 			path = DetailsScene;
 			sourceTree = "<group>";
@@ -263,6 +266,22 @@
 				CF4AF9BA2D35408D009E7F38 /* CountryManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		CF4AF9BC2D35490F009E7F38 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CF4AF9BD2D354918009E7F38 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CF4AF9BF2D35492E009E7F38 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CF4AF9A52D3497D6009E7F38 /* DetailView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF4AF9BE2D354918009E7F38 /* DetailViewModel.swift in Sources */,
 				CF4AF9982D349653009E7F38 /* CountryService.swift in Sources */,
 				CF4AF9B42D349B73009E7F38 /* CountryCardView.swift in Sources */,
 				CF4AF9A62D3497D6009E7F38 /* DetailView.swift in Sources */,
