@@ -14,6 +14,8 @@
 		CF4AF97B2D3495EF009E7F38 /* CMEAssessmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF97A2D3495EF009E7F38 /* CMEAssessmentTests.swift */; };
 		CF4AF9852D3495EF009E7F38 /* CMEAssessmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9842D3495EF009E7F38 /* CMEAssessmentUITests.swift */; };
 		CF4AF9872D3495EF009E7F38 /* CMEAssessmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9862D3495EF009E7F38 /* CMEAssessmentUITestsLaunchTests.swift */; };
+		CF4AF9962D34962D009E7F38 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9952D34962D009E7F38 /* NetworkManager.swift */; };
+		CF4AF9982D349653009E7F38 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9972D349653009E7F38 /* CountryService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		CF4AF9802D3495EF009E7F38 /* CMEAssessmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CMEAssessmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF4AF9842D3495EF009E7F38 /* CMEAssessmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMEAssessmentUITests.swift; sourceTree = "<group>"; };
 		CF4AF9862D3495EF009E7F38 /* CMEAssessmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMEAssessmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CF4AF9952D34962D009E7F38 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CF4AF9972D349653009E7F38 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 		CF4AF9682D3495EB009E7F38 /* CMEAssessment */ = {
 			isa = PBXGroup;
 			children = (
+				CF4AF9932D34961A009E7F38 /* Network */,
 				CF4AF9692D3495EB009E7F38 /* CMEAssessmentApp.swift */,
 				CF4AF96B2D3495EB009E7F38 /* ContentView.swift */,
 				CF4AF96D2D3495EE009E7F38 /* Assets.xcassets */,
@@ -125,6 +130,15 @@
 				CF4AF9862D3495EF009E7F38 /* CMEAssessmentUITestsLaunchTests.swift */,
 			);
 			path = CMEAssessmentUITests;
+			sourceTree = "<group>";
+		};
+		CF4AF9932D34961A009E7F38 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CF4AF9952D34962D009E7F38 /* NetworkManager.swift */,
+				CF4AF9972D349653009E7F38 /* CountryService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +271,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF4AF9982D349653009E7F38 /* CountryService.swift in Sources */,
+				CF4AF9962D34962D009E7F38 /* NetworkManager.swift in Sources */,
 				CF4AF96C2D3495EB009E7F38 /* ContentView.swift in Sources */,
 				CF4AF96A2D3495EB009E7F38 /* CMEAssessmentApp.swift in Sources */,
 			);
