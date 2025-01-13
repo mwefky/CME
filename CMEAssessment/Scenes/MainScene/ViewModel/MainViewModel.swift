@@ -25,6 +25,7 @@ class MainViewModel: ObservableObject {
     ) {
         self.countryService = countryService
         self.countryManager = countryManager
+        self.addedCountries = countryManager.addedCountries
     }
 
     func loadCountries() {
@@ -47,11 +48,10 @@ class MainViewModel: ObservableObject {
     }
 
     func addCountry(_ country: Country) {
-        
         if addedCountries.contains(where: { $0.name == country.name }) {
             return
         }
-        
+
         countryManager.addCountry(country)
         addedCountries = countryManager.addedCountries
     }

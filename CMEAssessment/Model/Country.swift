@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Country {
+struct Country: Encodable,Decodable {
     let name: String
     let population: Int
     let region: String
