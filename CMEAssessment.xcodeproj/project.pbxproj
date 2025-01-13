@@ -16,6 +16,16 @@
 		CF4AF9872D3495EF009E7F38 /* CMEAssessmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9862D3495EF009E7F38 /* CMEAssessmentUITestsLaunchTests.swift */; };
 		CF4AF9962D34962D009E7F38 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9952D34962D009E7F38 /* NetworkManager.swift */; };
 		CF4AF9982D349653009E7F38 /* CountryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9972D349653009E7F38 /* CountryService.swift */; };
+		CF4AF99B2D3496FC009E7F38 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF99A2D3496FC009E7F38 /* Coordinator.swift */; };
+		CF4AF9A02D34975C009E7F38 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF99F2D34975C009E7F38 /* MainViewModel.swift */; };
+		CF4AF9A32D349783009E7F38 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9A22D349783009E7F38 /* MainView.swift */; };
+		CF4AF9A62D3497D6009E7F38 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9A52D3497D6009E7F38 /* DetailView.swift */; };
+		CF4AF9A92D349820009E7F38 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9A82D349820009E7F38 /* SearchBar.swift */; };
+		CF4AF9AC2D349A23009E7F38 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9AB2D349A23009E7F38 /* Country.swift */; };
+		CF4AF9AE2D349A4C009E7F38 /* CountryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9AD2D349A4C009E7F38 /* CountryDTO.swift */; };
+		CF4AF9B02D349A62009E7F38 /* Country+Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9AF2D349A62009E7F38 /* Country+Mapper.swift */; };
+		CF4AF9B22D349AA3009E7F38 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9B12D349AA3009E7F38 /* AppConstants.swift */; };
+		CF4AF9B42D349B73009E7F38 /* CountryCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4AF9B32D349B73009E7F38 /* CountryCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +58,16 @@
 		CF4AF9862D3495EF009E7F38 /* CMEAssessmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CMEAssessmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CF4AF9952D34962D009E7F38 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CF4AF9972D349653009E7F38 /* CountryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryService.swift; sourceTree = "<group>"; };
+		CF4AF99A2D3496FC009E7F38 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		CF4AF99F2D34975C009E7F38 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		CF4AF9A22D349783009E7F38 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		CF4AF9A52D3497D6009E7F38 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		CF4AF9A82D349820009E7F38 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		CF4AF9AB2D349A23009E7F38 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		CF4AF9AD2D349A4C009E7F38 /* CountryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDTO.swift; sourceTree = "<group>"; };
+		CF4AF9AF2D349A62009E7F38 /* Country+Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+Mapper.swift"; sourceTree = "<group>"; };
+		CF4AF9B12D349AA3009E7F38 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		CF4AF9B32D349B73009E7F38 /* CountryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +118,13 @@
 		CF4AF9682D3495EB009E7F38 /* CMEAssessment */ = {
 			isa = PBXGroup;
 			children = (
+				CF4AF9AA2D349A19009E7F38 /* Model */,
+				CF4AF9A72D349800009E7F38 /* Components */,
 				CF4AF9932D34961A009E7F38 /* Network */,
-				CF4AF9692D3495EB009E7F38 /* CMEAssessmentApp.swift */,
+				CF4AF9992D3496ED009E7F38 /* Coordinator */,
+				CF4AF99C2D349720009E7F38 /* Scenes */,
 				CF4AF96B2D3495EB009E7F38 /* ContentView.swift */,
+				CF4AF9692D3495EB009E7F38 /* CMEAssessmentApp.swift */,
 				CF4AF96D2D3495EE009E7F38 /* Assets.xcassets */,
 				CF4AF96F2D3495EE009E7F38 /* Preview Content */,
 			);
@@ -137,8 +161,78 @@
 			children = (
 				CF4AF9952D34962D009E7F38 /* NetworkManager.swift */,
 				CF4AF9972D349653009E7F38 /* CountryService.swift */,
+				CF4AF9B12D349AA3009E7F38 /* AppConstants.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		CF4AF9992D3496ED009E7F38 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				CF4AF99A2D3496FC009E7F38 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CF4AF99C2D349720009E7F38 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CF4AF9A42D3497C2009E7F38 /* DetailsScene */,
+				CF4AF99D2D34972C009E7F38 /* MainScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CF4AF99D2D34972C009E7F38 /* MainScene */ = {
+			isa = PBXGroup;
+			children = (
+				CF4AF99E2D34974B009E7F38 /* ViewModel */,
+				CF4AF9A12D349772009E7F38 /* Views */,
+			);
+			path = MainScene;
+			sourceTree = "<group>";
+		};
+		CF4AF99E2D34974B009E7F38 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CF4AF99F2D34975C009E7F38 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CF4AF9A12D349772009E7F38 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CF4AF9A22D349783009E7F38 /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CF4AF9A42D3497C2009E7F38 /* DetailsScene */ = {
+			isa = PBXGroup;
+			children = (
+				CF4AF9A52D3497D6009E7F38 /* DetailView.swift */,
+			);
+			path = DetailsScene;
+			sourceTree = "<group>";
+		};
+		CF4AF9A72D349800009E7F38 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CF4AF9A82D349820009E7F38 /* SearchBar.swift */,
+				CF4AF9B32D349B73009E7F38 /* CountryCardView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		CF4AF9AA2D349A19009E7F38 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF4AF9AB2D349A23009E7F38 /* Country.swift */,
+				CF4AF9AD2D349A4C009E7F38 /* CountryDTO.swift */,
+				CF4AF9AF2D349A62009E7F38 /* Country+Mapper.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,9 +366,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF4AF9982D349653009E7F38 /* CountryService.swift in Sources */,
+				CF4AF9B42D349B73009E7F38 /* CountryCardView.swift in Sources */,
+				CF4AF9A62D3497D6009E7F38 /* DetailView.swift in Sources */,
+				CF4AF9A32D349783009E7F38 /* MainView.swift in Sources */,
 				CF4AF9962D34962D009E7F38 /* NetworkManager.swift in Sources */,
+				CF4AF99B2D3496FC009E7F38 /* Coordinator.swift in Sources */,
+				CF4AF9AE2D349A4C009E7F38 /* CountryDTO.swift in Sources */,
+				CF4AF9A92D349820009E7F38 /* SearchBar.swift in Sources */,
+				CF4AF9B02D349A62009E7F38 /* Country+Mapper.swift in Sources */,
 				CF4AF96C2D3495EB009E7F38 /* ContentView.swift in Sources */,
 				CF4AF96A2D3495EB009E7F38 /* CMEAssessmentApp.swift in Sources */,
+				CF4AF9B22D349AA3009E7F38 /* AppConstants.swift in Sources */,
+				CF4AF9AC2D349A23009E7F38 /* Country.swift in Sources */,
+				CF4AF9A02D34975C009E7F38 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

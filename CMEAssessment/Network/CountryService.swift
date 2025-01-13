@@ -7,22 +7,18 @@
 
 import Foundation
 
-struct Country: Decodable {
-    let name: String
-    let capital: String
-    let currencies: [Currency]?
-}
-
-struct Currency: Decodable {
-    let code: String
-    let name: String
-    let symbol: String
-}
-
 class CountryService {
-    private let apiURL = "https://restcountries.com/v2/all"
-    
-    func fetchCountries(completion: @escaping (Result<[Country], NetworkError>) -> Void) {
-        NetworkManager.shared.fetchData(urlString: apiURL, completion: completion)
+    func fetchCountries() async throws -> [Country] {
+        let urlString = "\(AppConstants.apiBaseURL)/all"
+        guard let url = URL(string: urlString) else {
+            throw NetworkError.invalidURL
+        }
+
+        let (data, _) = try await URLSession.shared.data(from: url)
+
+        let countryDTOs = try JSONDecoder().decode([CountryDTO].self, from: data)
+        return countryDTOs.map(CountryMapper.map)
     }
 }
+
+

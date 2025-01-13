@@ -7,34 +7,32 @@
 
 import Foundation
 
+import Foundation
+
 enum NetworkError: Error {
     case invalidURL
     case requestFailed
     case decodingFailed
+    case noData
 }
 
 class NetworkManager {
     static let shared = NetworkManager()
     private init() {}
     
-    func fetchData<T: Decodable>(urlString: String, completion: @escaping (Result<T, NetworkError>) -> Void) {
+    func fetchData<T: Decodable>(endpoint: String) async throws -> T {
+        let urlString = "\(AppConstants.apiBaseURL)\(endpoint)"
         guard let url = URL(string: urlString) else {
-            completion(.failure(.invalidURL))
-            return
+            throw NetworkError.invalidURL
         }
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if error != nil || data == nil {
-                completion(.failure(.requestFailed))
-                return
-            }
-            
-            do {
-                let decodedData = try JSONDecoder().decode(T.self, from: data!)
-                completion(.success(decodedData))
-            } catch {
-                completion(.failure(.decodingFailed))
-            }
-        }.resume()
+        let (data, _) = try await URLSession.shared.data(from: url)
+        
+        do {
+            let decodedData = try JSONDecoder().decode(T.self, from: data)
+            return decodedData
+        } catch {
+            throw NetworkError.decodingFailed
+        }
     }
 }
