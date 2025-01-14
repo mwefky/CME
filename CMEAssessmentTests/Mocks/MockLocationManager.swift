@@ -10,7 +10,7 @@ import Combine
 
 class MockLocationManager: LocationManager {
     private var currentCountrySubject = CurrentValueSubject<String?, Never>(nil)
-    
+
     override var currentCountry: String? {
         get { currentCountrySubject.value }
         set {
@@ -23,3 +23,4 @@ class MockLocationManager: LocationManager {
         currentCountrySubject.eraseToAnyPublisher()
     }
 }
+

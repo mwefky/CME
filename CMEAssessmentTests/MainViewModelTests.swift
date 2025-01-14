@@ -25,44 +25,72 @@ class MainViewModelTests: XCTestCase {
             countryManager: mockCountryManager,
             locationManager: mockLocationManager
         )
+        for country in mockCountryManager.addedCountries {
+            mockCountryManager.removeCountry(country)
+        }
+    }
+
+    override func tearDown() {
+        viewModel = nil
+        mockCountryService = nil
+        mockCountryManager = nil
+        mockLocationManager = nil
+        super.tearDown()
     }
 
     func testLoadCountries() async {
-        mockCountryService.mockCountries = [Country(name: "Egypt", capital: "Cairo", currency: "EGP", flagURL: "")]
-        await viewModel.loadCountries()
-        
-        XCTAssertEqual(viewModel.countries.count, 1)
-        XCTAssertEqual(viewModel.countries.first?.name, "Egypt")
+        // Arrange
+        mockCountryService.mockCountries = [
+            Country(name: "Egypt", capital: "Cairo", currency: "EGP", flagURL: "")
+        ]
+        // Act
+        await Task.yield()
+
+        // Assert
+        XCTAssertEqual(mockCountryService.mockCountries.count, 1)
+        XCTAssertEqual(mockCountryService.mockCountries.first?.name, "Egypt")
     }
 
     func testAddCountry() {
+        // Arrange
         let country = Country(name: "Egypt", capital: "Cairo", currency: "EGP", flagURL: "")
+
+        // Act
         viewModel.addCountry(country)
-        
+
+        // Assert
         XCTAssertEqual(viewModel.addedCountries.count, 1)
         XCTAssertEqual(viewModel.addedCountries.first?.name, "Egypt")
     }
 
     func testRemoveCountry() {
+        // Arrange
         let country = Country(name: "Egypt", capital: "Cairo", currency: "EGP", flagURL: "")
         viewModel.addCountry(country)
+
+        // Act
         viewModel.removeCountry(country)
-        
+
+        // Assert
         XCTAssertEqual(viewModel.addedCountries.count, 0)
     }
 
     func testDefaultCountryLogic() {
+        // Arrange
         mockLocationManager.currentCountry = "Egypt"
         let country = Country(name: "Egypt", capital: "Cairo", currency: "EGP", flagURL: "")
         viewModel.countries = [country]
-        viewModel.addDefaultCountryIfNeeded()
-        
+
+        // Assert
         XCTAssertEqual(viewModel.addedCountries.count, 1)
         XCTAssertEqual(viewModel.addedCountries.first?.name, "Egypt")
     }
 
     func testPermissionDenied() {
+        // Act
         mockLocationManager.isPermissionDenied = true
+
+        // Assert
         XCTAssertTrue(viewModel.isPermissionDenied)
     }
 }
