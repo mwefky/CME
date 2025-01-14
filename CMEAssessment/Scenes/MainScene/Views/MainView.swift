@@ -51,7 +51,7 @@ struct MainView: View {
                                     )
                                     .padding(.vertical, 4)
                                     .onTapGesture {
-                                        coordinator.selectedCountry = country
+                                        coordinator.showDetail(for: country)
                                     }
                             }
                             .onDelete(perform: deleteCountry)
@@ -65,6 +65,11 @@ struct MainView: View {
                 viewModel.loadCountries()
             }
             .navigationTitle("Countries")
+            .sheet(isPresented: $coordinator.isDetailViewPresented) {
+                if let selectedCountry = coordinator.selectedCountry {
+                    DetailView(viewModel: DetailViewModel(country: selectedCountry))
+                }
+            }
             .alert(isPresented: $viewModel.isPermissionDenied) {
                 Alert(
                     title: Text("Location Permission Denied"),

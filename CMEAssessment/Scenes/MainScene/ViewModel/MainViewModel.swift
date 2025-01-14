@@ -59,7 +59,6 @@ class MainViewModel: ObservableObject {
                 DispatchQueue.main.async { [weak self] in
                     self?.countries = fetchedCountries
                     self?.countryNames = fetchedCountries.map { $0.name }
-                    self?.addDefaultCountryIfNeeded()
                     self?.isLoading = false
                 }
             } catch {
@@ -68,16 +67,6 @@ class MainViewModel: ObservableObject {
                     self?.isLoading = false
                 }
             }
-        }
-    }
-
-    func addDefaultCountryIfNeeded() {
-        guard addedCountries.isEmpty else { return }
-        if let defaultCountry = defaultCountryHandler.determineDefaultCountry(
-            availableCountries: countries,
-            locationCountry: locationManager.currentCountry
-        ) {
-            addCountry(defaultCountry)
         }
     }
 

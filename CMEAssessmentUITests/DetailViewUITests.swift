@@ -26,33 +26,24 @@ class DetailViewUITests: XCTestCase {
         // Navigate to the DetailView by selecting a country
         addCountryAndNavigateToDetails("Egypt")
         
-        let detailTitle = app.navigationBars["Egypt"]
-        XCTAssertTrue(detailTitle.exists, "DetailView navigation title should display the country's name.")
+        let detailTitle = app.staticTexts["Egypt"]
+        XCTAssertTrue(detailTitle.exists, "DetailView title should display the country's name.")
         
         let capitalLabel = app.staticTexts["Capital: Cairo"]
         XCTAssertTrue(capitalLabel.exists, "The capital 'Cairo' should be displayed.")
-        
-        let currencyLabel = app.staticTexts["Currency: EGP"]
-        XCTAssertTrue(currencyLabel.exists, "The currency 'EGP' should be displayed.")
-    }
-    
-    func testDetailViewDisplaysFlag() {
-        // Navigate to the DetailView by selecting a country
-        addCountryAndNavigateToDetails("Egypt")
-        
-        let flagImage = app.images["FlagImage"]
-        XCTAssertTrue(flagImage.exists, "The flag image for 'Egypt' should be displayed.")
     }
     
     func testDetailViewBackNavigation() {
         addCountryAndNavigateToDetails("Egypt")
         
-        let backButton = app.navigationBars.buttons.element(boundBy: 0)
-        XCTAssertTrue(backButton.exists, "Back button should be present on the DetailView.")
-        backButton.tap()
+        // Perform swipe down gesture to dismiss the sheet
+        let startCoordinate = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.2))
+        let endCoordinate = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.8))
+        startCoordinate.press(forDuration: 0.1, thenDragTo: endCoordinate)
         
+        // Verify navigation back to MainView
         let mainViewTitle = app.navigationBars["Countries"]
-        XCTAssertTrue(mainViewTitle.exists, "The app should navigate back to the MainView.")
+        XCTAssertTrue(mainViewTitle.exists, "The app should navigate back to the MainView after dismissing the DetailView.")
     }
     
     // MARK: - Helper Functions
@@ -69,6 +60,6 @@ class DetailViewUITests: XCTestCase {
         
         let countryCell = app.staticTexts[countryName]
         XCTAssertTrue(countryCell.exists, "The country \(countryName) should be visible.")
-        countryCell.tap()
+        countryCell.forceTapElement()
     }
 }

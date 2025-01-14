@@ -38,7 +38,6 @@ class DefaultCountryHandler: DefaultCountryHandlerProtocol {
     }
 
     private func saveAndReturn(_ country: Country) -> Country {
-        persistenceManager.saveAddedCountries([country])
         return country
     }
 }
